@@ -1,4 +1,4 @@
-# Droplet-Time-Sequence
+# Droplet Time Sequence
 
 This code analyses videos and mark when droplets pass over a specific location. It provides a sequence of times, and the location. Next, using the time sequence, you can create a histogram and compute the power law. 
  
