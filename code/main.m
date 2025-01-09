@@ -1,7 +1,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Droplet Time Sequence: histogram and power law
-% Copyright 2024 Author: Jonatan Mac Intyre -- 2024.10.31
+% Copyright 2024 Author: Jonatan Mac Intyre -- 2025.01.09
 % ORCID https://orcid.org/0000-0002-3383-0946
 % jonatan.macintyre@oulu.fi
 %
