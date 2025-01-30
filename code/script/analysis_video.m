@@ -92,6 +92,14 @@ for k = setting.initial_frame:setting.frame_rate:setting.final_frame
 
     end
 
+    %% Visualization 
+
+    if strcmp(setting.show_video,'yes')
+
+        analysis_visualization(BW,centros,indx,c2,count)
+
+    end
+
 end
 
 %% Remove duplicates
