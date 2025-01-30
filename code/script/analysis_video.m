@@ -60,12 +60,13 @@ plot( (lim_c+8)*[1 1] , [1 size(I,1)] , 'b-' , 'LineWidth', 1.2 )
 
 %% Find the droplet passing between the blue lines
 
-Droplets_sequence = zeros(100,3) ; 
+Droplets_sequence = zeros(1,3) ; 
 
 for k = setting.initial_frame:setting.frame_rate:setting.final_frame
 
     I = rgb2gray( imcrop( read(vi,k) , setting.CropSection ) ) ;
-    BW = imfill( imextendedmax( I , setting.threshold_value ) , "holes" ) ;
+    T = adaptthresh(I, setting.threshold_value );
+    BW = ~imclose( ~imbinarize( I , T ) , strel('disk',6) ) ;
 
     s = regionprops(BW,'Centroid','Circularity','Area') ; 
     centros = cat(1,s.Centroid) ; 
@@ -74,7 +75,7 @@ for k = setting.initial_frame:setting.frame_rate:setting.final_frame
     
     if ~isempty(s)
 
-        indx = cir > 0.7 & area > 0.8*mean(area) ; 
+        indx = cir > 0.5 & area > 0.65*mean(area) ; 
 
         if any(indx)
 
@@ -84,7 +85,7 @@ for k = setting.initial_frame:setting.frame_rate:setting.final_frame
 
             if any(count)
 
-                Droplets_sequence(k,:) = [k*ones(sum(count),1) c2(count,:)] ; 
+                Droplets_sequence = cat(1, Droplets_sequence , [k*ones(sum(count),1) c2(count,:)] ) ; 
 
             end
 
