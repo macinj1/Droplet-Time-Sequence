@@ -49,7 +49,8 @@ setting.final_seg = 17 ;
 setting.frame_rate = 10 ; % 1 mean use all frames
 
 % Higher numbers delete boundaries, lower numbers make everything black 
-setting.threshold_value = 115 ;
+% Minumim is 0, maximum is 1.
+setting.threshold_value = 0.8 ;
 
 % Visualization: yes or no 
 setting.show_video = 'yes';
